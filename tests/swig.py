@@ -40,6 +40,7 @@ import testLib
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+
 class SwigTestCase(unittest.TestCase):
     """A test case for SWIG utilities in p_lsstSwig.i"""
 
@@ -74,8 +75,8 @@ class SwigTestCase(unittest.TestCase):
     def testEqualityComparison(self):
         self.assertNotEqual(self.example, testLib.Example("bar"))
         self.assertEqual(self.example, testLib.Example("foo"))
-        self.assertNotEqual(self.example, [3,4,5]) # should not throw
-        self.assertNotEqual([3,4,5], self.example) # should not throw
+        self.assertNotEqual(self.example, [3, 4, 5])  # should not throw
+        self.assertNotEqual([3, 4, 5], self.example)  # should not throw
 
     def assertAccepts(self, function, value, msg):
         try:
@@ -137,6 +138,7 @@ def suite():
     suites += unittest.makeSuite(SwigTestCase)
     suites += unittest.makeSuite(utilsTests.MemoryTestCase)
     return unittest.TestSuite(suites)
+
 
 def run(exit=False):
     """Run the tests"""
